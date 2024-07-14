@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNESCO </title>
+
+    <!--leaflet css -->
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            /* Background color for dark mode */
+            color: #fff;
+            /* Text color for dark mode */
+        }
+
+
+
+        #title-bar {
+            text-align: center;
+            padding: 20px;
+            /* Apply the radial gradient background here */
+            background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+
+            font-size: 30px;
+            font-weight: bold;
+            /* Make the title bold */
+            color: white;
+            /* Text color for the title */
+        }
+
+
+        #map-container {
+            /*position: relative;*/
+            /* display: none;*/
+            width: 100%;
+            /* Adjust the height to leave space for the title bar and controls */
+            height: calc(100vh - 50px);
+            /* 50px accounts for the title bar and control height */
+        }
+
+
+        /* Define your custom-popup class */
+        /* .custom-popup {
+            max-width: 400px;
+            /* Set the desired maximum width */
+        /*max-height: 300px;
+            /* Set the desired maximum height */
+
+
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="map-container">
+        <div id="title-bar">Geo Maps UNESCO <i class="fa-solid fa-map-location-dot"></i></div>
+        <div id="map"></div>
+    </div>
+
+
+    <footer style=" position: fixed;right: 20px;bottom: 20px;">
+        <p>&copy; 2023 GEO Maps . All rights reserved</p>
+    </footer>
+
+</body>
+
+</html>
+<!--leaflet javascript -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="./main.js"></script>
+
+<script>
+
+    // map intialization
+    var map = L.map('map').setView([28.6139, 77.2090], 5);
+
+    
+    //osm map layer
+    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+
+    
+    osm.addTo(map);
+
+    /*  var marker = L.marker([27.179752291804036, 78.02117636879848], {
+          title: "Hi! I'm in Delhi",
+      }).addTo(map)
+          .bindPopup('<h1>AGRA FORT</h1> <p>Agra Fort, also known as the Red Fort of Agra, is a historic fort located in the city of Agra, Uttar Pradesh, India. It is one of the most famous and well-preserved forts in India. Agra Fort is an architectural marvel, with its red sandstone construction and intricate Mughal designs. The fort walls stretch for about 2.5 kilometers</p> <img src="./agra.jpg" style="width: 200px">', {
+              maxWidth: 300, // Set the maximum width of the popup
+              maxHeight: 400, // Set the maximum height of the popup
+          })
+          .openPopup();*/
+
+    var marker = L.marker([20.55211143070398, 75.70325209576328], {
+        title: "Hi! I'm in Maharastra",
+
+    }).addTo(map)
+        .bindPopup('<h1>AJANTA CAVES </h1> <p>The Ajanta Caves are situated in the Sahyadri Hills of the Western Ghats, approximately 100 kilometers (62 miles) from the city of Aurangabad in Maharashtra, India.The caves are primarily associated with Buddhism and were used as monastic retreats, meditation centers, and religious shrines.There are a total of 30 rock-cut caves at Ajanta</p> <img src="./ajanta.jpg" style="width: 280px">', {
+            maxWidth: 300, // Set the maximum width of the popup
+            maxHeight: 400, // Set the maximum height of the popup
+        })
+        .openPopup();
+
+    var marker = L.marker([27.173891, 78.042068], {
+        title: "Hi! I'm in Delhi",
+    }).addTo(map)
+        .bindPopup('<h1>TAJ MAHAL </h1> <p>The Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in Agra, Uttar Pradesh, India. It was commissioned in 1631 by the fifth Mughal emperor, Shah Jahan to house the tomb of his beloved wife, Mumtaz Mahal; it also houses the tomb of Shah Jahan himself.</p> <img src="./TAJ.jpg" style="width: 290px">', {
+            maxWidth: 300, // Set the maximum width of the popup
+            maxHeight: 400, // Set the maximum height of the popup
+        })
+        .openPopup();
+
+
+    var marker = L.marker([12.6264, 80.1722], {
+        title: "Hi! I'm in Tamil Nadu",
+    }).addTo(map)
+        .bindPopup('<h1>MAHABALIPURAM</h1> <p>Mahabalipuram is a fascinating destination for history enthusiasts, art lovers, and tourists looking to explore India rich cultural heritage. Its unique combination of ancient rock-cut architecture and beautiful coastal scenery makes it a must-visit place in Tamil Nadu.</p> <img src="./maha.jpg" style="width: 290px">', {
+            maxWidth: 300, // Set the maximum width of the popup
+            maxHeight: 400, // Set the maximum height of the popup
+        })
+        .openPopup();
+
+
+    var marker = L.marker([15.3350, 76.4600], {
+        title: "Hi! I'm in Karnataka",
+    }).addTo(map)
+        .bindPopup('<h1>HAMPI </h1> <p> Hampi is renowned for its historical and archaeological importance. It was the capital of the Vijayanagara Empire, which flourished from the 14th to the 16th century CE and was known for its rich culture, trade, and military strength.</p> <img src="./hampi.jpg" style="width: 290px">', {
+            maxWidth: 300, // Set the maximum width of the popup
+            maxHeight: 400, // Set the maximum height of the popup
+        })
+        .openPopup();
+
+    var marker = L.marker([19.887804395657913, 86.09444350602278], {
+        title: "Hi! I'm in Odissa",
+    }).addTo(map)
+        .bindPopup('<h1>SUN TEMPLE </h1> <p>The Sun Temple is situated in the small coastal town of Konark. The temple is dedicated to Surya, the Sun God, and is often referred to as the "Black Pagoda" due to its dark-colored stone construction.</p> <img src="./sun.jpg" style="width: 290px">', {
+            maxWidth: 300, // Set the maximum width of the popup
+            maxHeight: 400, // Set the maximum height of the popup
+        })
+        .openPopup();
+
+
+    var marker = L.marker([24.8507, 79.9197], {
+        title: "Hi! I'm in Madhya Pradesh",
+    }).addTo(map)
+        .bindPopup('<h1>KHAJURAHO</h1> <p> This group of temples is famous for its stunning and intricate erotic sculptures. While the temples depict a wide range of themes, including mythology, daily life, and spiritual teachings, they are particularly famous for their explicit erotic sculptures. These sculptures are often considered symbolic of the celebration of human life and love.</p> <img src="./Madhya.webp" style="width: 290px">', {
+            maxWidth: 300, // Set the maximum width of the popup
+            maxHeight: 400, // Set the maximum height of the popup
+        })
+        .openPopup();
+
+
+    var marker = L.marker([23.6821, 87.6836], {
+        title: "Hi! I'm in West Bengal",
+    }).addTo(map)
+        .bindPopup('<h1>SANTINIKENTAN</h1> <p>  Santiniketan was established by Rabindranath Tagore in 1901 as an experimental center for education and the arts.  The town is a popular tourist destination, attracting visitors interested in art, culture, and the legacy of Rabindranath Tagore. </p> <img src="./sat.jpg" style="width: 290px">', {
+            maxWidth: 300, // Set the maximum width of the popup
+            maxHeight: 400, // Set the maximum height of the popup
+        })
+        .openPopup();
+
+
+    var marker = L.marker([28.6139, 77.2156], {
+        title: "Hi! I'm in Jaipur",
+    }).addTo(map)
+        .bindPopup('<h1>JANTAR MANTAR </h1> <p> Jantar Mantar refers to a collection of architectural astronomical observatories in India, constructed during the 18th century. These observatories were built by Maharaja Jai Singh II, a Rajput king and astronomer, in order to study the heavens and make accurate astronomical calculations. </p> <img src="./Jantar.jpg" style="width: 290px">', {
+            maxWidth: 300, // Set the maximum width of the popup
+            maxHeight: 400, // Set the maximum height of the popup
+        })
+        .openPopup();
+
+
+    var marker = L.marker([15.3350, 76.4600], {
+        title: "Hi! I'm in Karnataka",
+    }).addTo(map)
+        .bindPopup('<h1>HAMPI </h1> <p> Hampi is renowned for its historical and archaeological importance. It was the capital of the Vijayanagara Empire, which flourished from the 14th to the 16th century CE and was known for its rich culture, trade, and military strength.</p> <img src="./hampi.jpg" style="width: 290px">', {
+            maxWidth: 300, // Set the maximum width of the popup
+            maxHeight: 400, // Set the maximum height of the popup
+        })
+        .openPopup();
+        
+        L.Control.geocoder({
+        placeholder: "Enter location...",
+        fontSize: '17px',
+        borderRadius: '20px',
+        border: '1px solid #ccc',
+        padding: '7px'
+    }).addTo(map);
+
+    //satellite map
+    googleSat = L.tileLayer('http://{s}.google.com/vt?lyrs=s&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    });
+    // googleSat.addTo(map);
+
+    //terrain map
+    googleTerrain = L.tileLayer('http://{s}.google.com/vt?lyrs=p&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    });
+    //googleTerrain.addTo(map);
+
+    //esri world imagery
+    var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+    // Esri_WorldImagery.addTo(map);
+
+    //another dark map
+    var Drk_map = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20
+    });
+    //Drk_map.addTo(map);
+
+
+
+    // geojson layer
+
+    // L.geoJSON(pointJson).addTo(map)
+    //L.geoJSON(lineJson).addTo(map)
+    //to add india into a layer
+    L.geoJSON(indiaJson, {
+        style: {
+            fillColor: '#FFE4B5',
+            fillOpacity: 1,
+            color: 'blue',
+            weight: 2
+        }
+    }).addTo(map)
+
+
+ 
+
+
+</script>

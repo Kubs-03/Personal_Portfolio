@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="stopwatch.css">
+    <script src="stopwatch.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway+Dots">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Stopwatch</h1>
+        <div class="wrapper">
+            <div class="min" id="minutes">
+                <span>0</span><span>0</span>
+            </div>
+            <div class="separator">:</div>
+            <div class="sec" id="seconds">
+                <span>0</span><span>0</span>
+            </div>
+            <div class="separator">:</div>
+            <div class="milli" id="milliseconds">
+                <span>0</span><span>0</span>
+            </div>
+        </div>
+
+        <div class="btn">
+            <button onclick="startStopwatch()">Start</button>
+            <button onclick="stopStopwatch()">Stop</button>
+            <button onclick="resetStopwatch()">Reset</button>
+            <button onclick="lapStopwatch()">Lap</button>
+        </div>
+        <div id="laps"></div>
+    </div>
+</body>
+
+</html>
